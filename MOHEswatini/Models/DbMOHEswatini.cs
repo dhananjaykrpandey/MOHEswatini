@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace MOHEswatini.Models
 {
-    public class DbMOHEswatini:DbContext
+    public class DbMOHEswatini : DbContext
     {
+        public DbSet<mLogin> MLogins { get; set; }
         public DbMOHEswatini(DbContextOptions<DbMOHEswatini> options)
        : base(options)
         { }

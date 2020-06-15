@@ -146,7 +146,7 @@ namespace MOHEswatini
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Logins}/{action=Index}/{id?}");
             });
         }
 
