@@ -71,7 +71,7 @@ namespace MOHEswatini.Controllers
     }
     public static class BuilderExtensions
     {
-        public static IApplicationBuilder UseSitemapMiddleware(this IApplicationBuilder app, string rootUrl = "https://localhost:44375")
+        public static IApplicationBuilder UseSitemapMiddleware(this IApplicationBuilder app, string rootUrl = "https://localhost:49211")
         {
             return app.UseMiddleware<SitemapMiddleware>(new[] { rootUrl });
         }

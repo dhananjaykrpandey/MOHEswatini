@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,11 +24,97 @@ namespace MOHEswatini.Controllers
         }
 
         // GET: mLogins
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.MLogins.ToListAsync());
+            mLogin mLogin = null;
+            return View(mLogin);
+            //return View(await _context.MLogins.ToListAsync());
         }
+        [HttpPost]
+        public IActionResult Index(mLogin mLogin)
+        {
+            try
+            {
 
+
+                if (ModelState.IsValid)
+                {
+                    IEnumerable<mLogin> mLogins = null;
+
+                    //using (var client = new HttpClient())
+                    //{
+
+                    //    //var user = new IdentityUser { UserName = mLogin.Name, Email = mLogin.EmailID };
+                    //    // client.BaseAddress = new Uri(@"https://localhost:44366/api/");
+                    //    //client.BaseAddress = new Uri("https://localhost:31/api");
+                    //    client.BaseAddress = new Uri(AdminDashBoardConfigVal.AdminDashBoardWebApiClient);
+                    //    var responseTask = client.GetAsync("login/" + mLogin.UserID + "/" + mLogin.Password + "");
+                    //    responseTask.Wait();
+
+                    //    var result = responseTask.Result;
+                    //    if (result.IsSuccessStatusCode)
+                    //    {
+                    //        var readTask = result.Content.ReadAsAsync<mLogin>();
+                    //        readTask.Wait();
+                    //        var claims = new List<Claim>
+                    //                        {
+                    //                            new Claim(ClaimTypes.Name, readTask.Result.Name, ClaimValueTypes.String, "https://localhost:44323")
+                    //                        };
+                    //        var userIdentity = new ClaimsIdentity(claims, "SecureLogin");
+                    //        var userPrincipal = new ClaimsPrincipal(userIdentity);
+
+                    //        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                    //           userPrincipal,
+                    //           new AuthenticationProperties
+                    //           {
+                    //               ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
+                    //               IsPersistent = false,
+                    //               AllowRefresh = false
+                    //           });
+
+                    //        HttpContext.Session.SetString("login", "true");
+                    //        HttpContext.Session.SetString("UserName", readTask.Result.Name);
+
+
+                    //        var ProjectMenu = client.GetAsync("ProjectMenu/");
+                    //        ProjectMenu.Wait();
+
+                    //        var ProjectMenuResult = ProjectMenu.Result.Content.ReadAsStringAsync();
+                    //        ProjectMenuResult.Wait();
+
+                    //        HttpContext.Session.SetString("ProjectMenuResult", ProjectMenuResult.Result);
+
+                    //        Response.Cookies.Append("ProjectMenuResult", ProjectMenuResult.Result, new CookieOptions() { Expires = DateTime.Now.AddDays(1) });
+
+                    //        return RedirectToAction("Index", "Home");
+                    //    }
+                    //    else //web api sent error response 
+                    //    {
+                    //        //log response status here..
+
+                    //        mLogins = Enumerable.Empty<mLogin>();
+
+                    //        ModelState.AddModelError(string.Empty, "Invalid Login User-ID or Password");
+                    //    }
+                    //}
+
+
+                }
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                ModelState.AddModelError(string.Empty, "Some Problem occure while sending request please report it." + ex.Message.ToString());
+                return View();
+            }
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
         // GET: mLogins/Details/5
         public async Task<IActionResult> Details(string id)
         {
