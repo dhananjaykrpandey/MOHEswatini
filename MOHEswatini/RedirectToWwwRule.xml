@@ -1,0 +1,11 @@
+﻿<rewrite>
+  <rules>
+    <rule name="CanonicalHostNameRule">
+      <match url="(.*)" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^www\.arnikainfotech\.com$" negate="true" />
+      </conditions>
+      <action type="Redirect" url="http://www.arnikainfotech.com/{R:1}" />
+    </rule>
+  </rules>
+</rewrite>
