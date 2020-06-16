@@ -57,15 +57,16 @@ namespace MOHEswatini.Controllers
                                                       new Claim(ClaimTypes.Email, mLogins.EmailID.Trim()),
                                                       new Claim(ClaimTypes.MobilePhone, mLogins.Phone.Trim())},
                                                       CookieAuthenticationDefaults.AuthenticationScheme);
+
+                        HttpContext.Session.SetString("login", "true");
+                        HttpContext.Session.SetString("UserName", mLogins.Name.Trim());
                         isAuthenticated = true;
                     }
 
                     if (isAuthenticated)
                     {
                         var principal = new ClaimsPrincipal(identity);
-
                         var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
                         return RedirectToAction("DashBoard", "Home");
                     }
                     else
@@ -86,7 +87,13 @@ namespace MOHEswatini.Controllers
         }
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            //HttpContext.Session.Clear();
+            foreach (var cookieKey in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookieKey);
+            }
+
             return Redirect("/");
         }
         // GET: mLogins/Details/5

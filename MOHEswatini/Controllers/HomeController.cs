@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MOHEswatini.Models;
 
 namespace MOHEswatini.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -22,6 +24,8 @@ namespace MOHEswatini.Controllers
         {
             return View();
         }
+        [Authorize]
+        
         public IActionResult DashBoard()
         {
             return View();
@@ -31,7 +35,10 @@ namespace MOHEswatini.Controllers
         {
             return View();
         }
-
+        public IActionResult ContactUS()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

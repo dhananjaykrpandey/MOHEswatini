@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="navbar-brand">
                     <img src="~/dist/img/MOHLogo128.png" alt="AdminLTE Logo" class="brand-image">
                     <span class="brand-text font-weight-bold">Ministry Of Health</span>
-                    <span class="brand-text font-weight-lighter">[Kingdom Of Eswatini]</span>
+                    <span class="font-weight-lighter">[Kingdom Of Eswatini]</span>
                 </a>
 
                 <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +41,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <ul class="navbar-nav">
                         <!-- Messages Dropdown Menu -->
                         <li class="nav-item">
-                            <a class="nav-link text-danger" href="#">
+                            <a class="nav-link text-danger" asp-action="Index" asp-controller="Home">
                                 <i class="fas fa-home"></i> Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" href="#">
+                            <a class="nav-link text-primary" asp-action="ContactUS" asp-controller="Home">
                                 <i class="fas fa-phone"></i> Contact-Us
                             </a>
                         </li>
@@ -88,13 +88,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.content-wrapper -->
         <!-- Main Footer -->
-        <footer class="main-footer text-center">
+        <footer class="main-footer">
             <!-- To the right -->
-            @*<div class="float-right d-none d-sm-inline">
-                    Anything you want
-                </div>*@
+            <div class="float-right d-none d-sm-inline">
+                    Design & Developed By <a href="https://arnikainfotech.com" target="_blank">Arnika Technologies</a>
+                </div>
             <!-- Default to the left -->
-            <strong class="text-center">Copyright &copy; @DateTime.Now.Year <a href="https://adminlte.io">Ministry Of Health</a>.</strong> All rights reserved.
+            <strong class="">Copyright &copy; @DateTime.Now.Year <a href="http://www.gov.sz/index.php/ministries-departments/ministry-of-health" target="_blank">Ministry Of Health</a>.</strong> All rights reserved.
         </footer>
     </div>
     <!-- ./wrapper -->

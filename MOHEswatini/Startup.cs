@@ -91,7 +91,34 @@ namespace MOHEswatini
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.LoginPath = "/Logins/Index";
+                options.AccessDeniedPath = "/Home/Index";
+                options.ReturnUrlParameter = "/Home/Index";
+                options.SlidingExpiration = true;
+                options.Cookie.SameSite = SameSiteMode.Lax;
+            });
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.MaxAge = TimeSpan.FromSeconds(30); 
+                options.Cookie.IsEssential = true;
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+                //options.LoginPath = new PathString("/Logins/Index"); ;
+                //options.AccessDeniedPath = new PathString("/Logins/Index"); ;
+                options.SlidingExpiration = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -125,7 +152,7 @@ namespace MOHEswatini
                 }
             });
 
-            //app.UseMvc();
+            
             app.UseResponseCaching();
             app.Use(async (context, next) =>
             {
@@ -133,19 +160,21 @@ namespace MOHEswatini
                     new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
                     {
                         Public = true,
-                        MaxAge = TimeSpan.FromSeconds(600)
+                        MaxAge = TimeSpan.FromSeconds(100000)
                     };
                 context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
                     new string[] { "Accept-Encoding" };
 
                 await next();
             });
+            app.UseCookiePolicy();
+            app.UseSession();
             app.UseSitemapMiddleware("https://www.arnikainfotech.com");
             app.UseRobotsTxt(env);
             app.UseRouting();
-            app.UseAuthorization();
-            app.UseCookiePolicy();
             app.UseAuthentication();
+            app.UseAuthorization();
+            //app.UseMvc();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
