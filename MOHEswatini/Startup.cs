@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using System.IO.Compression;
 using System.Linq;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -82,10 +83,15 @@ namespace MOHEswatini
 
             services.AddDbContext<DbMOHEswatini>(options => options.UseSqlServer(Configuration.GetConnectionString("MOHEswatiniDBConnection")));
             services.AddMvc();
-            services.ConfigureApplicationCookie(options =>
+
+
+            services.Configure<CookiePolicyOptions>(options =>
             {
-                options.Cookie.SameSite = SameSiteMode.None;
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.  
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -138,11 +144,13 @@ namespace MOHEswatini
             app.UseRobotsTxt(env);
             app.UseRouting();
             app.UseAuthorization();
+            app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Logins}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 

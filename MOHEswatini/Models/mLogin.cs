@@ -26,7 +26,7 @@ namespace MOHEswatini.Models
         [Column("cPassword")]
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Password is required")]
-        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password Must Contain At Lest 8 Character.")]
+        [StringLength(50, MinimumLength = 5, ErrorMessage = "Password Must Contain At Lest 8 Character.")]
         public string Password { get; set; }
 
         [Column("cName")]

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MOHEswatini.Models;
+using Org.BouncyCastle.Math.EC.Rfc7748;
 
 namespace MOHEswatini.Controllers
 {
@@ -39,69 +40,42 @@ namespace MOHEswatini.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    IEnumerable<mLogin> mLogins = null;
+                    mLogin mLogins = null;
+                    mLogins = _context.MLogins.Where(x => x.UserID.ToUpper() == mLogin.UserID.ToUpper() && x.Password == mLogin.Password).FirstOrDefault();
 
-                    //using (var client = new HttpClient())
-                    //{
+                    //Check the user name and password  
+                    //Here can be implemented checking logic from the database  
+                    ClaimsIdentity identity = null;
+                    bool isAuthenticated = false;
 
-                    //    //var user = new IdentityUser { UserName = mLogin.Name, Email = mLogin.EmailID };
-                    //    // client.BaseAddress = new Uri(@"https://localhost:44366/api/");
-                    //    //client.BaseAddress = new Uri("https://localhost:31/api");
-                    //    client.BaseAddress = new Uri(AdminDashBoardConfigVal.AdminDashBoardWebApiClient);
-                    //    var responseTask = client.GetAsync("login/" + mLogin.UserID + "/" + mLogin.Password + "");
-                    //    responseTask.Wait();
+                    if (mLogins != null && (mLogins.Name.Trim() != null && mLogins.Name.Trim() != ""))
+                    {
 
-                    //    var result = responseTask.Result;
-                    //    if (result.IsSuccessStatusCode)
-                    //    {
-                    //        var readTask = result.Content.ReadAsAsync<mLogin>();
-                    //        readTask.Wait();
-                    //        var claims = new List<Claim>
-                    //                        {
-                    //                            new Claim(ClaimTypes.Name, readTask.Result.Name, ClaimValueTypes.String, "https://localhost:44323")
-                    //                        };
-                    //        var userIdentity = new ClaimsIdentity(claims, "SecureLogin");
-                    //        var userPrincipal = new ClaimsPrincipal(userIdentity);
+                        //Create the identity for the user  
+                        identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, mLogins.Name.Trim()),
+                                                      new Claim(ClaimTypes.Role, mLogins.Type.Trim()) ,
+                                                      new Claim(ClaimTypes.Email, mLogins.EmailID.Trim()),
+                                                      new Claim(ClaimTypes.MobilePhone, mLogins.Phone.Trim())},
+                                                      CookieAuthenticationDefaults.AuthenticationScheme);
+                        isAuthenticated = true;
+                    }
 
-                    //        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                    //           userPrincipal,
-                    //           new AuthenticationProperties
-                    //           {
-                    //               ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
-                    //               IsPersistent = false,
-                    //               AllowRefresh = false
-                    //           });
+                    if (isAuthenticated)
+                    {
+                        var principal = new ClaimsPrincipal(identity);
 
-                    //        HttpContext.Session.SetString("login", "true");
-                    //        HttpContext.Session.SetString("UserName", readTask.Result.Name);
+                        var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
+                        return RedirectToAction("DashBoard", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid User ID Or Password");
 
-                    //        var ProjectMenu = client.GetAsync("ProjectMenu/");
-                    //        ProjectMenu.Wait();
-
-                    //        var ProjectMenuResult = ProjectMenu.Result.Content.ReadAsStringAsync();
-                    //        ProjectMenuResult.Wait();
-
-                    //        HttpContext.Session.SetString("ProjectMenuResult", ProjectMenuResult.Result);
-
-                    //        Response.Cookies.Append("ProjectMenuResult", ProjectMenuResult.Result, new CookieOptions() { Expires = DateTime.Now.AddDays(1) });
-
-                    //        return RedirectToAction("Index", "Home");
-                    //    }
-                    //    else //web api sent error response 
-                    //    {
-                    //        //log response status here..
-
-                    //        mLogins = Enumerable.Empty<mLogin>();
-
-                    //        ModelState.AddModelError(string.Empty, "Invalid Login User-ID or Password");
-                    //    }
-                    //}
-
-
+                    }
                 }
-
                 return View();
+
             }
             catch (Exception ex)
             {
