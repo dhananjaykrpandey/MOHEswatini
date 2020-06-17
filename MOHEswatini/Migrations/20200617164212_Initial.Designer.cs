@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MOHEswatini.Migrations
 {
     [DbContext(typeof(DbMOHEswatini))]
-    [Migration("20200617085948_MOHEswatiniMigration")]
-    partial class MOHEswatiniMigration
+    [Migration("20200617164212_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,8 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<DateTime>("ArrivalDate")
+                    b.Property<DateTime?>("ArrivalDate")
+                        .IsRequired()
                         .HasColumnName("dArrivalDate")
                         .HasColumnType("datetime");
 
@@ -44,7 +45,7 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<bool>("Bleeding")
+                    b.Property<bool?>("Bleeding")
                         .HasColumnName("lBleeding")
                         .HasColumnType("bit");
 
@@ -54,7 +55,7 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(30)")
                         .HasMaxLength(30);
 
-                    b.Property<bool>("Cough")
+                    b.Property<bool?>("Cough")
                         .HasColumnName("lCough")
                         .HasColumnType("bit");
 
@@ -69,11 +70,11 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<bool>("CovidTested")
+                    b.Property<bool?>("CovidTested")
                         .HasColumnName("lCovidTested")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("CovidTestingDate")
+                    b.Property<DateTime?>("CovidTestingDate")
                         .HasColumnName("dCovidTestingDate")
                         .HasColumnType("datetime");
 
@@ -87,11 +88,19 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<bool>("Diarrhea")
+                    b.Property<string>("CreatedBy")
+                        .HasColumnName("cCreatedBy")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnName("dCreatedDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<bool?>("Diarrhea")
                         .HasColumnName("lDiarrhea")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Fever")
+                    b.Property<bool?>("Fever")
                         .HasColumnName("lFever")
                         .HasColumnType("bit");
 
@@ -101,11 +110,11 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<bool>("GeneralBodyPain")
+                    b.Property<bool?>("GeneralBodyPain")
                         .HasColumnName("lGeneralBodyPain")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Headache")
+                    b.Property<bool?>("Headache")
                         .HasColumnName("lHeadache")
                         .HasColumnType("bit");
 
@@ -114,7 +123,7 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<bool>("Malaria")
+                    b.Property<bool?>("Malaria")
                         .HasColumnName("lMalaria")
                         .HasColumnType("bit");
 
@@ -124,23 +133,23 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int>("NoOfDaysSpend1")
+                    b.Property<int?>("NoOfDaysSpend1")
                         .HasColumnName("cNoOfDaysSpend1")
                         .HasColumnType("int");
 
-                    b.Property<int>("NoOfDaysSpend13")
+                    b.Property<int?>("NoOfDaysSpend13")
                         .HasColumnName("cNoOfDaysSpend3")
                         .HasColumnType("int");
 
-                    b.Property<int>("NoOfDaysSpend2")
+                    b.Property<int?>("NoOfDaysSpend2")
                         .HasColumnName("cNoOfDaysSpend2")
                         .HasColumnType("int");
 
-                    b.Property<int>("NoOfDaysSpend4")
+                    b.Property<int?>("NoOfDaysSpend4")
                         .HasColumnName("cNoOfDaysSpend4")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Others")
+                    b.Property<bool?>("Others")
                         .HasColumnName("lOthers")
                         .HasColumnType("bit");
 
@@ -173,30 +182,26 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<bool>("Polio")
+                    b.Property<bool?>("Polio")
                         .HasColumnName("lPolio")
                         .HasColumnType("bit");
 
                     b.Property<string>("RecentlyVisitedCountry1")
-                        .IsRequired()
                         .HasColumnName("cRecentlyVisitedCountry1")
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
                     b.Property<string>("RecentlyVisitedCountry2")
-                        .IsRequired()
                         .HasColumnName("cRecentlyVisitedCountry2")
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
                     b.Property<string>("RecentlyVisitedCountry3")
-                        .IsRequired()
                         .HasColumnName("cRecentlyVisitedCountry3")
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
 
                     b.Property<string>("RecentlyVisitedCountry4")
-                        .IsRequired()
                         .HasColumnName("cRecentlyVisitedCountry4")
                         .HasColumnType("varchar(20)")
                         .HasMaxLength(20);
@@ -206,9 +211,17 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(10)")
                         .HasMaxLength(10);
 
-                    b.Property<bool>("SoreThroat")
+                    b.Property<bool?>("SoreThroat")
                         .HasColumnName("lSoreThroat")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnName("dUpdateDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnName("cUpdatedBy")
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("VehicleNo")
                         .IsRequired()
@@ -216,11 +229,11 @@ namespace MOHEswatini.Migrations
                         .HasColumnType("varchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<bool>("Vomiting")
+                    b.Property<bool?>("Vomiting")
                         .HasColumnName("lVomiting")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("YellowFever")
+                    b.Property<bool?>("YellowFever")
                         .HasColumnName("lYellowFever")
                         .HasColumnType("bit");
 

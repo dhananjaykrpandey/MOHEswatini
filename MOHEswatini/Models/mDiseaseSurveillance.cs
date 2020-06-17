@@ -216,5 +216,18 @@ namespace MOHEswatini.Models
         [Display(Name = "Covid-19 Test Result")]
         [StringLength(50)]
         public string CovidTestResult { get; set; }
+        
+        
+        [Column("cCreatedBy", TypeName = "varchar(50)")]
+        public string CreatedBy { get; set; }
+        
+        [Column("dCreatedDate", TypeName = "datetime")]
+        public DateTime? CreatedDate { get; set; }
+        
+        [Column("cUpdatedBy", TypeName = "varchar(50)")]
+        public string UpdatedBy { get; set; }
+        
+        [Column("dUpdateDate", TypeName = "datetime")]
+        public DateTime? UpdateDate { get; set; }
     }
 }

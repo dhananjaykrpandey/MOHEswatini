@@ -82,7 +82,7 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">Welcome @User.Identity.Name</span>
+                        <span class="dropdown-item dropdown-header">Welcome  @User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.GivenName)?.Value</span>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-user mr-2"></i>  @User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value
@@ -124,7 +124,7 @@
                         <img src="../../dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">@User.Identity.Name</a>
+                        <a href="#" class="d-block">@User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.GivenName)?.Value</a>
                     </div>
                 </div>
 

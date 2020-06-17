@@ -57,6 +57,10 @@ namespace MOHEswatini.Controllers
         {
             if (ModelState.IsValid)
             {
+                mDiseaseSurveillance.CreatedBy = User.Identity.Name;
+                mDiseaseSurveillance.CreatedDate = DateTime.Now;
+                mDiseaseSurveillance.UpdatedBy = User.Identity.Name;
+                mDiseaseSurveillance.UpdateDate = DateTime.Now;
                 _context.Add(mDiseaseSurveillance);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -71,7 +75,7 @@ namespace MOHEswatini.Controllers
             {
                 return NotFound();
             }
-
+            
             var mDiseaseSurveillance = await _context.mDiseaseSurveillances.FindAsync(id);
             if (mDiseaseSurveillance == null)
             {
@@ -96,6 +100,8 @@ namespace MOHEswatini.Controllers
             {
                 try
                 {
+                    mDiseaseSurveillance.UpdatedBy = User.Identity.Name;
+                    mDiseaseSurveillance.UpdateDate = DateTime.Now;
                     _context.Update(mDiseaseSurveillance);
                     await _context.SaveChangesAsync();
                 }

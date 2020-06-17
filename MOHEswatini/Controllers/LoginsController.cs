@@ -52,10 +52,11 @@ namespace MOHEswatini.Controllers
                     {
 
                         //Create the identity for the user  
-                        identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, mLogins.Name.Trim()),
+                        identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, mLogins.UserID.Trim()),
                                                       new Claim(ClaimTypes.Role, mLogins.Type.Trim()) ,
                                                       new Claim(ClaimTypes.Email, mLogins.EmailID.Trim()),
-                                                      new Claim(ClaimTypes.MobilePhone, mLogins.Phone.Trim())},
+                                                      new Claim(ClaimTypes.GivenName, mLogins.Name.Trim()),
+                                                       new Claim(ClaimTypes.MobilePhone, mLogins.Phone.Trim())},
                                                       CookieAuthenticationDefaults.AuthenticationScheme);
 
                         HttpContext.Session.SetString("login", "true");
