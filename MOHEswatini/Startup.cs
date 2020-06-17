@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MOHEswatini.Controllers;
 using MOHEswatini.Models;
+using Rotativa.AspNetCore;
 using WebMarkupMin.AspNetCore2;
 namespace MOHEswatini
 {
@@ -181,6 +182,9 @@ namespace MOHEswatini
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            // var webRootPath = env.WebRootPath;
+            // call rotativa conf passing env to get web root path
+            RotativaConfiguration.Setup(env.WebRootPath, "Rotativa"); 
         }
 
         

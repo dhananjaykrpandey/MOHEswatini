@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MOHEswatini.Models;
+using Rotativa.AspNetCore;
 
 namespace MOHEswatini.Controllers
 {
@@ -154,5 +155,42 @@ namespace MOHEswatini.Controllers
         {
             return _context.mDiseaseSurveillances.Any(e => e.iID == id);
         }
+        // POST: DiseaseSurveillances/Delete/5
+        
+        public IActionResult Print(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var mDiseaseSurveillance =  _context.mDiseaseSurveillances.FirstOrDefault(m => m.iID == id);
+            //return View(mDiseaseSurveillance);
+            //ViewData["Message"] = "Your contact page.";
+
+            //return new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml", mDiseaseSurveillance);
+
+            var demoViewLandscape = new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml", mDiseaseSurveillance)
+            {
+                FileName = "Disease Surveillances Form.pdf",
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+                PageSize=Rotativa.AspNetCore.Options.Size.A4,
+                PageMargins= { Left = 10, Bottom = 10, Right = 10, Top = 10 }
+            };
+            return demoViewLandscape;
+        }
+        public IActionResult PrintReport(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var mDiseaseSurveillance = _context.mDiseaseSurveillances.FirstOrDefaultAsync(m => m.iID == id);
+                       
+
+            return new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml");
+        }
+        //return new ViewAsPdf("~/Views/Home/Contact.cshtml", viewData: ViewData);
     }
 }
