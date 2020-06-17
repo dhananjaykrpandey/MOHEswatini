@@ -21,4 +21,8 @@
     <PackageReference Include="WebMarkupMin.Core" Version="2.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Documents\" />
+  </ItemGroup>
+
 </Project>

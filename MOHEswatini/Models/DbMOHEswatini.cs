@@ -9,8 +9,8 @@ namespace MOHEswatini.Models
     public class DbMOHEswatini : DbContext
     {
         public DbSet<mLogin> MLogins { get; set; }
-        public DbMOHEswatini(DbContextOptions<DbMOHEswatini> options)
-       : base(options)
+        public DbSet<mDiseaseSurveillance> mDiseaseSurveillances { get; set; }
+        public DbMOHEswatini(DbContextOptions<DbMOHEswatini> options): base(options)
         { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,6 +19,7 @@ namespace MOHEswatini.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

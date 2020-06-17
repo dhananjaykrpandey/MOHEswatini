@@ -1,0 +1,393 @@
+﻿@model MOHEswatini.Models.mDiseaseSurveillance
+
+@{
+    ViewData["Title"] = "Disease Surveillance Arrival Remove Record";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<!-- right column -->
+<div class="col-lg-12 col-md-6 col-sm-6">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Are you sure you want to delete this?</h3>
+        </div>
+        <!-- /.card-header  -->
+        <div class="card-body">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="iID" />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- text input -->
+                        <div class="form-group col-md-6">
+                            <label asp-for="ArrivalDate" class="control-label"></label>
+                            <input asp-for="ArrivalDate" class="form-control" readonly />
+                            <span asp-validation-for="ArrivalDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="ArrivedBy" class="control-label"></label>
+
+                            <select class="form-control" asp-for="ArrivedBy" readonly>
+                                <option>-Select Arrived By-</option>
+                                <option>Flight</option>
+                                <option>Bus</option>
+                                <option>Truck</option>
+                                <option>Car</option>
+                                <option>Other Vehicle</option>
+                            </select>
+
+                            @*<input asp-for="ArrivedBy" class="form-control" placeholder="Arrived By(ex-Flight/Bus/Car/Truck)" />*@
+                            <span asp-validation-for="ArrivedBy" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="VehicleNo" class="control-label"></label>
+                            <input asp-for="VehicleNo" class="form-control" readonly />
+                            <span asp-validation-for="VehicleNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="SeatNo" class="control-label"></label>
+                            <input asp-for="SeatNo" class="form-control" readonly />
+                            <span asp-validation-for="SeatNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PointOfEntry" class="control-label"></label>
+                    <input asp-for="PointOfEntry" class="form-control" readonly />
+                    <span asp-validation-for="PointOfEntry" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" readonly />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="ContactNo" class="control-label"></label>
+                            <input asp-for="ContactNo" class="form-control" readonly />
+                            <span asp-validation-for="ContactNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="PassportNo" class="control-label"></label>
+                            <input asp-for="PassportNo" class="form-control" readonly />
+                            <span asp-validation-for="PassportNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="Age" class="control-label"></label>
+
+                            <select class="form-control" asp-for="Age" readonly>
+                                <option>- Select Age In Year -</option>
+                                <option>Under 5</option>
+                                <option>5-9</option>
+                                <option>10-14</option>
+                                <option>15-19</option>
+                                <option>20-24</option>
+                                <option>25-29</option>
+                                <option>30-34</option>
+                                <option>35-39</option>
+                                <option>40-45</option>
+                                <option>50+</option>
+
+                            </select>
+                            @*<input asp-for="Age" class="form-control" />*@
+                            <span asp-validation-for="Age" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Gender" class="control-label"></label>
+
+                            <select class="form-control" asp-for="Gender" readonly>
+                                <option>- Select Gender -</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                            @*<input asp-for="Gender" class="form-control" />*@
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row bg-gradient-lightblue">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center align-content-center">Recently Visited Country/Transited In Last 21 Days</p>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="RecentlyVisitedCountry1" class="control-label"></label>
+                                            <input asp-for="RecentlyVisitedCountry1" class="form-control" readonly />
+                                            <span asp-validation-for="RecentlyVisitedCountry1" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="NoOfDaysSpend1" class="control-label"></label>
+                                            <input asp-for="NoOfDaysSpend1" class="form-control" readonly />
+                                            <span asp-validation-for="NoOfDaysSpend1" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="RecentlyVisitedCountry2" class="control-label"></label>
+                                            <input asp-for="RecentlyVisitedCountry2" class="form-control" readonly />
+                                            <span asp-validation-for="RecentlyVisitedCountry2" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="NoOfDaysSpend2" class="control-label"></label>
+                                            <input asp-for="NoOfDaysSpend2" class="form-control" readonly />
+                                            <span asp-validation-for="NoOfDaysSpend2" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="RecentlyVisitedCountry3" class="control-label"></label>
+                                            <input asp-for="RecentlyVisitedCountry3" class="form-control" readonly />
+                                            <span asp-validation-for="RecentlyVisitedCountry3" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="NoOfDaysSpend13" class="control-label"></label>
+                                            <input asp-for="NoOfDaysSpend13" class="form-control" readonly />
+                                            <span asp-validation-for="NoOfDaysSpend13" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="RecentlyVisitedCountry4" class="control-label"></label>
+                                            <input asp-for="RecentlyVisitedCountry4" class="form-control" readonly />
+                                            <span asp-validation-for="RecentlyVisitedCountry4" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label asp-for="NoOfDaysSpend4" class="control-label"></label>
+                                            <input asp-for="NoOfDaysSpend4" class="form-control" readonly />
+                                            <span asp-validation-for="NoOfDaysSpend4" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row bg-gradient-warning">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center">Destination In Swaziland</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="PhysicalAddress" class="control-label"></label>
+                                    <textarea rows="5" type="text" asp-for="PhysicalAddress" class="form-control" readonly></textarea>
+                                    <span asp-validation-for="PhysicalAddress" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="PhysicalContactNo" class="control-label"></label>
+                                    <input asp-for="PhysicalContactNo" class="form-control" readonly />
+                                    <span asp-validation-for="PhysicalContactNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CountryOfResidence" class="control-label"></label>
+                                    <input asp-for="CountryOfResidence" class="form-control" readonly>
+                                    <span asp-validation-for="CountryOfResidence" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row bg-gradient-info">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center">Do You Have Any Of The Following Symptoms(please Tick)</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <div class="form-check">
+
+                                        <input class="form-check-input" asp-for="Headache" disabled /> @Html.DisplayNameFor(model => model.Headache)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Bleeding" disabled /> @Html.DisplayNameFor(model => model.Bleeding)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Fever" disabled /> @Html.DisplayNameFor(model => model.Fever)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Cough" disabled /> @Html.DisplayNameFor(model => model.Cough)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- radio -->
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="GeneralBodyPain" disabled /> @Html.DisplayNameFor(model => model.GeneralBodyPain)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Diarrhea" disabled /> @Html.DisplayNameFor(model => model.Diarrhea)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Vomiting" disabled /> @Html.DisplayNameFor(model => model.Vomiting)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="SoreThroat" disabled /> @Html.DisplayNameFor(model => model.SoreThroat)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row bg-gradient-fuchsia">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center">Have You Been Vaccinated For The Following</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <div class="form-check">
+
+                                        <input class="form-check-input" asp-for="Polio" disabled /> @Html.DisplayNameFor(model => model.Polio)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="YellowFever" disabled /> @Html.DisplayNameFor(model => model.YellowFever)
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- radio -->
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Malaria" disabled /> @Html.DisplayNameFor(model => model.Malaria)
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" asp-for="Others" disabled /> @Html.DisplayNameFor(model => model.Others)
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="OthersVaccine" class="control-label"></label>
+                                    <input asp-for="OthersVaccine" class="form-control" readonly />
+                                    <span asp-validation-for="OthersVaccine" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <label asp-for="HealthFacility" class="control-label"></label>
+                    <input asp-for="HealthFacility" class="form-control" readonly />
+                    <span asp-validation-for="HealthFacility" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class=" row bg-gradient-light">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center"> Covid - 19 Test Details</p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-check text-sm-left">
+                                    <input class="form-check-input" asp-for="CovidTested" disabled /> @Html.DisplayNameFor(model => model.CovidTested)
+                                </div>
+                                <br />
+                                <div class="form-group ">
+                                    <label asp-for="CovidTestingDate" class="control-label"></label>
+                                    <input asp-for="CovidTestingDate" class="form-control " readonly />
+                                    <span asp-validation-for="CovidTestingDate" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CovidTestingKitNo" class="control-label"></label>
+                                    <input asp-for="CovidTestingKitNo" class="form-control" readonly />
+                                    <span asp-validation-for="CovidTestingKitNo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CovidTestResult" class="control-label"></label>
+                                    <input asp-for="CovidTestResult" class="form-control" readonly>
+                                    <span asp-validation-for="CovidTestResult" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <br />
+                                <br />
+                                <div class="form-group">
+                                    <label asp-for="CovidTestingLab" class="control-label"></label>
+                                    <textarea asp-for="CovidTestingLab" class="form-control" rows="9" readonly></textarea>
+                                    <span asp-validation-for="CovidTestingLab" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class=" row bg-gradient-gray">
+                    <div class="col-lg-12">
+                        <p class="font-weight-bold text-center"></p>
+                        <div class="row">
+                            <div class="col-sm-2"><a asp-action="Index" class="btn btn-block bg-gradient-warning ">Back to List</a></div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-2"><input type="submit" value="Delete" class="btn btn-block bg-gradient-danger" onclick = "return confirm('Are you sure you wish to delete this record?');"  /></div>
+                        </div>
+                        <p class="font-weight-bold text-center"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    <!-- general form elements disabled -->
+    <!-- /.card -->
+</div>
+

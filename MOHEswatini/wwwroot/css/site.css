@@ -1,71 +1,58 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿.a3dtooltip {
+    position: relative;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
+    .a3dtooltip:hover {
+        text-decoration: none;
+    }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+    .a3dtooltip:after {
+        content: attr(tip);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 90%;
+        line-height: 1.2em;
+        color: #fff;
+        width: 200px;
+        padding: 5px 10px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background: #c00d3f;
+        background: -webkit-linear-gradient(#c00d3f, #7b0a2a);
+        background: -moz-linear-gradient(#c00d3f, #7b0a2a);
+        background: -o-linear-gradient(#c00d3f, #7b0a2a);
+        background: -ms-linear-gradient(#c00d3f, #7b0a2a);
+        background: linear-gradient(#c00d3f, #7b0a2a);
+        -moz-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        -webkit-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        position: absolute;
+        top: 27px;
+        left: -10px;
+        display: none;
+    }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+    .a3dtooltip:before {
+        z-index: 1000;
+        position: absolute;
+        content: "";
+        top: 15px;
+        left: 0px;
+        border-right: 7px transparent solid;
+        border-left: 7px transparent solid;
+        display: none;
+    }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+    .a3dtooltip:hover {
+        z-index: 1000;
+        position: relative;
+        color: #8325f7;
+    }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+        .a3dtooltip:hover:after {
+            display: block;
+        }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
-}
+        .a3dtooltip:hover:before {
+            display: block;
+        }

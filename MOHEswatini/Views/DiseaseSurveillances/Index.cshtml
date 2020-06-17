@@ -1,0 +1,394 @@
+﻿@model IEnumerable<MOHEswatini.Models.mDiseaseSurveillance>
+
+@{
+    ViewData["Title"] = "Disease Surveillance";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Disease Surveillance List</h3>
+        <a asp-action="Create" class="btn btn-primary float-right"> <i class="fas fa-plus"></i> Create New</a>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArrivalDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArrivedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VehicleNo)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.SeatNo)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.PointOfEntry)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContactNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PassportNo)
+                    </th>
+
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivalDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ArrivedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VehicleNo)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.SeatNo)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PointOfEntry)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PassportNo)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.iID" class="btn btn-warning btn-sm" title="Edit Details"><i class="fas fa-pencil-alt"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.iID" class="btn btn-primary btn-sm" title="View Details"><i class="fas fa-eye"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.iID" class="btn btn-danger btn-sm" title="Remove Record"><i class="fas fa-trash"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.iID" class="btn btn-success btn-sm" title="Print Record"><i class="fas fa-print"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArrivalDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ArrivedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VehicleNo)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.SeatNo)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.PointOfEntry)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContactNo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PassportNo)
+                    </th>
+
+                    <th>Action</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<script>$(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });</script>      
+
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PointOfEntry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecentlyVisitedCountry1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDaysSpend1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecentlyVisitedCountry2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDaysSpend2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecentlyVisitedCountry3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDaysSpend13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecentlyVisitedCountry4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoOfDaysSpend4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhysicalContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryOfResidence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Headache)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bleeding)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fever)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cough)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneralBodyPain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diarrhea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vomiting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoreThroat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Polio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YellowFever)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Malaria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Others)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OthersVaccine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthFacility)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CovidTested)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CovidTestingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CovidTestingLab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CovidTestingKitNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CovidTestResult)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PointOfEntry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PassportNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecentlyVisitedCountry1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfDaysSpend1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecentlyVisitedCountry2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfDaysSpend2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecentlyVisitedCountry3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfDaysSpend13)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecentlyVisitedCountry4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfDaysSpend4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhysicalAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhysicalContactNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryOfResidence)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Headache)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bleeding)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fever)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cough)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GeneralBodyPain)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diarrhea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vomiting)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoreThroat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Polio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YellowFever)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Malaria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Others)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OthersVaccine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HealthFacility)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CovidTested)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CovidTestingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CovidTestingLab)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CovidTestingKitNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CovidTestResult)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.iID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.iID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.iID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
