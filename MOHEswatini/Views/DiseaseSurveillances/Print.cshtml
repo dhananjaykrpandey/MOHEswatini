@@ -1,66 +1,927 @@
 ﻿@model MOHEswatini.Models.mDiseaseSurveillance
 
 @{
-    ViewData["Title"] = "Disease Surveillance Form Print";
+    ViewData["Title"] = "Disease Surveillance Arrival Details";
     Layout = null;
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewBag.Title | Ministry Of Health</title>
+<HTML>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/PrintCss.css" rel="stylesheet" />
-</head>
-<body>
+<HEAD>
+    <title>Ministry Of Health | @ViewBag.Tilte</title>
+</HEAD>
 
-    <table class="col-sm-12">
-        <tr class="text-center">
-            <td class="col-sm-12 text-center">
-                <img src="~/dist/img/MOHLogo128.png" />
-            </td>
-        </tr>
-        <tr class=" col-sm-12 text-center font-weight-bolder">
-            <td>
-                Disease Surveillance Form
-            </td>
-        </tr>
-        <tr class="text-center">
-            <td>
-                Arrival Form (Visitors And Returning Residents)
-            </td>
-        </tr>
-    </table>
-    <table class="trda">
-        <tr class="text-center">
-            <th class="trda">
-                @Html.DisplayNameFor(model => model.ArrivalDate)
-            </th>
-            <td>
-                @Html.DisplayFor(model => model.ArrivalDate)
-            </td>
-            <th>
-                @Html.DisplayNameFor(model => model.ArrivedBy)
-            </th>
-            <td>
-                @Html.DisplayFor(model => model.ArrivedBy)
-            </td>
-        </tr>
-    </table>
+<BODY>
+    <style>
+        div {
+            position: absolute;
+            z-index: 25
+        }
 
-    <table class="col-sm-12">
-        <tr class="text-left">
-            <td>
-                Arrival Form (Visitors And Returning Residents)
-            </td>
-        </tr>
-    </table>
+        a {
+            text-decoration: none
+        }
 
-</body>
-</html>
+            a img {
+                border-style: none;
+                border-width: 0
+            }
+
+        .fcickm11qaod3k-0 {
+            font-size: 13pt;
+            color: #000000;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        .fcickm11qaod3k-1 {
+            font-size: 9pt;
+            color: #000000;
+            font-family: Arial;
+            font-weight: normal;
+        }
+
+        .fcickm11qaod3k-2 {
+            font-size: 9pt;
+            color: #000000;
+            font-family: Arial;
+            font-weight: bold;
+        }
+
+        .fcickm11qaod3k-3 {
+            font-size: 7pt;
+            color: #000000;
+            font-family: Arial;
+            font-weight: normal;
+        }
+
+        .adickm11qaod3k-0 {
+            border-color: #000000;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+        }
+
+        .adickm11qaod3k-1 {
+            border-color: #000000;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+        }
+    </style>
+    <div style="z-index:10;top:3px;left:0px;width:744px;height:970px;border-color:#000000;border-style:solid;border-width:1px;">
+        <table width="736px" height="962px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:124px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:742px;">
+    </div>
+    <div style="z-index:30;top:284px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:744px;">
+    </div>
+    <div style="z-index:30;top:284px;left:336px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,184px,0px);height:184px;">
+        <table width="0px" height="179px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:309px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:336px;">
+    </div>
+    <div style="z-index:30;top:310px;left:210px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,159px,0px);height:159px;">
+        <table width="0px" height="154px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:337px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:336px;">
+    </div>
+    <div style="z-index:30;top:368px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:336px;">
+    </div>
+    <div style="z-index:30;top:399px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:336px;">
+    </div>
+    <div style="z-index:30;top:436px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:336px;">
+    </div>
+    <div style="z-index:30;top:309px;left:336px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:407px;">
+    </div>
+    <div style="z-index:30;top:469px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:742px;">
+    </div>
+    <div style="z-index:30;top:513px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:738px;left:2px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:740px;">
+    </div>
+    <div style="z-index:30;top:514px;left:210px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,223px,0px);height:223px;">
+        <table width="0px" height="218px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:512px;left:336px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,226px,0px);height:226px;">
+        <table width="0px" height="221px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:513px;left:618px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,225px,0px);height:225px;">
+        <table width="0px" height="220px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:554px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:601px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:648px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:695px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:770px;left:210px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,105px,0px);height:105px;">
+        <table width="0px" height="100px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:770px;left:336px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,105px,0px);height:105px;">
+        <table width="0px" height="100px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:770px;left:617px;border-color:#000000;border-style:solid;border-width:0px;border-left-width:1px;clip:rect(0px,1px,105px,0px);height:105px;">
+        <table width="0px" height="100px">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:30;top:770px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:743px;">
+    </div>
+    <div style="z-index:30;top:898px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:742px;">
+    </div>
+    <div style="z-index:30;top:801px;left:1px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:741px;">
+    </div>
+    <div style="z-index:30;top:874px;left:2px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:740px;">
+    </div>
+    <div style="z-index:30;top:838px;left:2px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:740px;">
+    </div>
+    <div style="z-index:30;top:923px;left:0px;border-color:#000000;border-style:solid;border-width:0px;border-top-width:1px;width:744px;">
+    </div>
+    <div style="z-index:3;clip:rect(0px,748px,124px,0px);top:0px;left:0px;width:748px;height:124px;"></div>
+    <div class="adickm11qaod3k-0" nowrap="true" style="z-index:15;top:8px;left:288px;width:139px;height:63px;">
+        <img src="~/dist/img/MOHLogo128.png" border="0" width="139px" height="63px">
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:77px;left:9px;width:728px;height:22px;">
+        <table width="728px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center"><span class="fcickm11qaod3k-0">&nbsp;Disease&nbsp;Surveillance&nbsp;Form</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:104px;left:9px;width:728px;height:19px;">
+        <table width="728px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-1">Arrival&nbsp;Form&nbsp;</span><span class="fcickm11qaod3k-1">(</span><span class="fcickm11qaod3k-1">Visitors&nbsp;And&nbsp;Returning&nbsp;Residents</span><span class="fcickm11qaod3k-1">)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:3;clip:rect(0px,748px,344px,0px);top:124px;left:0px;width:748px;height:344px;"></div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:132px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.ArrivalDate)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:132px;left:120px;width:216px;height:15px;">
+        <table width="216px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">  @Html.DisplayFor(Model => Model.ArrivalDate)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:132px;left:344px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.ArrivedBy)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:132px;left:498px;width:243px;height:15px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.ArrivedBy)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:156px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.VehicleNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:156px;left:120px;width:216px;height:15px;">
+        <table width="216px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.VehicleNo)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:156px;left:344px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.SeatNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:156px;left:498px;width:243px;height:15px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.SeatNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:180px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.PointOfEntry)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:180px;left:120px;width:616px;height:15px;">
+        <table width="616px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.PointOfEntry)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:204px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.Name)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:204px;left:120px;width:616px;height:15px;">
+        <table width="616px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.Name)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:228px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.ContactNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:228px;left:120px;width:216px;height:15px;">
+        <table width="216px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.ContactNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:228px;left:344px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.PassportNo)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:228px;left:498px;width:243px;height:15px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.PassportNo)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:252px;left:498px;width:243px;height:15px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.Gender)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:252px;left:344px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.Gender)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:252px;left:120px;width:216px;height:15px;">
+        <table width="216px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.Age)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:252px;left:8px;width:104px;height:16px;">
+        <table width="104px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.Age)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:290px;left:6px;width:325px;height:16px;">
+        <table width="325px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">Recently&nbsp;Visited&nbsp;Country</span><span class="fcickm11qaod3k-2">/</span><span class="fcickm11qaod3k-2">Transited&nbsp;in&nbsp;Last&nbsp;</span><span class="fcickm11qaod3k-2">21&nbsp;</span><span class="fcickm11qaod3k-2">Days</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:291px;left:347px;width:330px;height:16px;">
+        <table width="330px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">Destination&nbsp;In&nbsp;SwaziLand</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:314px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center"><span class="fcickm11qaod3k-2">Country&nbsp;</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:314px;left:222px;width:108px;height:20px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center"><span class="fcickm11qaod3k-2">No&nbsp;Of&nbsp;Day&nbsp;Spent&nbsp;</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:343px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.RecentlyVisitedCountry1)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:375px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.RecentlyVisitedCountry2)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:407px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.RecentlyVisitedCountry3)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:441px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.RecentlyVisitedCountry4)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:343px;left:222px;width:108px;height:20px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.NoOfDaysSpend1)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:375px;left:222px;width:108px;height:20px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.NoOfDaysSpend2);</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:407px;left:222px;width:108px;height:20px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.NoOfDaysSpend13)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:442px;left:222px;width:108px;height:20px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.NoOfDaysSpend4)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:314px;left:348px;width:112px;height:20px;">
+        <table width="112px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.PhysicalAddress)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:343px;left:348px;width:388px;height:53px;">
+        <table width="388px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.PhysicalAddress)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:407px;left:348px;width:143px;height:20px;">
+        <table width="143px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.PhysicalContactNo)</span><span class="fcickm11qaod3k-2">.</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:442px;left:347px;width:143px;height:20px;">
+        <table width="143px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.CountryOfResidence)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:407px;left:498px;width:243px;height:20px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.PhysicalContactNo)</span>
+                </td>
+            </tr>
+        </table>
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">&nbsp;</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:442px;left:497px;width:243px;height:20px;">
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-1">@Html.DisplayFor(Model => Model.CountryOfResidence)</span>
+                </td>
+            </tr>
+        </table>
+        <table width="243px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">&nbsp;</span></td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:3;clip:rect(0px,748px,454px,0px);top:469px;left:0px;width:748px;height:454px;"></div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:481px;left:6px;width:729px;height:22px;">
+        <table width="729px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">Do&nbsp;you&nbsp;have&nbsp;any&nbsp;of&nbsp;following&nbsp;symptoms</span><span class="fcickm11qaod3k-2">?</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:521px;left:8px;width:194px;height:26px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Sign&nbsp;</span><span class="fcickm11qaod3k-2">&&nbsp;</span><span class="fcickm11qaod3k-2">Symptoms</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:521px;left:222px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Yes</span><span class="fcickm11qaod3k-2">/</span><span class="fcickm11qaod3k-2">No</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:521px;left:357px;width:194px;height:26px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Sign&nbsp;</span><span class="fcickm11qaod3k-2">&&nbsp;</span><span class="fcickm11qaod3k-2">Symptoms</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:521px;left:627px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Yes</span><span class="fcickm11qaod3k-2">/</span><span class="fcickm11qaod3k-2">No</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:567px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Headache)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:617px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Bleeding)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:664px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Fever)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:709px;left:8px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Cough)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:568px;left:348px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.GeneralBodyPain)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:614px;left:348px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Diarrhea)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:662px;left:348px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Vomiting)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:707px;left:348px;width:194px;height:20px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.SoreThroat)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:565px;left:222px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Headache == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:613px;left:222px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Bleeding == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:657px;left:222px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Fever == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:702px;left:222px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Cough == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:565px;left:627px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.GeneralBodyPain == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:613px;left:627px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Diarrhea == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:662px;left:627px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Vomiting == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:702px;left:627px;width:108px;height:26px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.SoreThroat == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:746px;left:9px;width:729px;height:22px;">
+        <table width="729px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">Have&nbsp;you&nbsp;have&nbsp;been&nbsp;vaccinated for following&nbsp;</span><span class="fcickm11qaod3k-2">?</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:778px;left:351px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center"><span class="fcickm11qaod3k-2">Disease 2</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:777px;left:9px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center"><span class="fcickm11qaod3k-2">Disease 1</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:778px;left:222px;width:108px;height:19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Yes</span><span class="fcickm11qaod3k-2">/</span><span class="fcickm11qaod3k-2">No </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:811px;left:382px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Malaria)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:778px;left:631px;width:108px;height:19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    <span class="fcickm11qaod3k-2">Yes</span><span class="fcickm11qaod3k-2">/</span><span class="fcickm11qaod3k-2">No </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:811px;left:222px;width:108px;height:19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Polio == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:811px;left:9px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Polio)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:879px;left:210px;width:528px;height:17px;">
+        <table width="528px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model=>Model.OthersVaccine)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="        z-index: 25;
+        top: 811px;
+        left: 625px;
+        width: 108px;
+        height: 19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Malaria == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:879px;left:8px;width:194px;height:17px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">Other&nbsp;</span><span class="fcickm11qaod3k-2">(</span><span class="fcickm11qaod3k-2">Please&nbsp;Specify</span><span class="fcickm11qaod3k-2">)</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:903px;left:8px;width:307px;height:20px;">
+        <table width="307px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-2">@Html.DisplayNameFor(Model => Model.HealthFacility)</span>
+</td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:903px;left:319px;width:419px;height:15px;">
+        <table width="419px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayFor(Model=>Model.HealthFacility)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:846px;left:625px;width:108px;height:19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.Others == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:846px;left:378px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.Others)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:846px;left:220px;width:108px;height:19px;">
+        <table width="108px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="center">
+                    @{ if (Model.YellowFever == true)
+                        {
+                            <span class="fcickm11qaod3k-1">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="fcickm11qaod3k-1">No</span>
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:846px;left:6px;width:194px;height:19px;">
+        <table width="194px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left"><span class="fcickm11qaod3k-1">@Html.DisplayNameFor(Model => Model.YellowFever)</span></td>
+            </tr>
+        </table>
+    </div>
+    <div style="z-index:3;clip:rect(0px,748px,50px,0px);top:922px;left:0px;width:748px;height:50px;"></div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:927px;left:9px;width:728px;height:17px;">
+        <table width="728px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-3">**</span><span class="fcickm11qaod3k-3">In-line&nbsp;with&nbsp;the&nbsp;Internal&nbsp;Health&nbsp;Regulation&nbsp;</span><span class="fcickm11qaod3k-3">(</span><span class="fcickm11qaod3k-3">IHR</span><span class="fcickm11qaod3k-3">)&nbsp;</span><span class="fcickm11qaod3k-3">2005</span><span class="fcickm11qaod3k-3">.&nbsp;</span><span class="fcickm11qaod3k-3">The&nbsp;Ministry&nbsp;of&nbsp;Health&nbsp;requested&nbsp;all&nbsp;Returning&nbsp;residents&nbsp;and&nbsp;visitors&nbsp;to&nbsp;fill&nbsp;this&nbsp;form</span><span class="fcickm11qaod3k-3">.</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="adickm11qaod3k-1" nowrap="true" style="z-index:25;top:955px;left:9px;width:728px;height:15px;">
+        <table width="728px" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td align="left">
+                    <span class="fcickm11qaod3k-3">**</span><span class="fcickm11qaod3k-3">The&nbsp;information&nbsp;collected&nbsp;will&nbsp;be&nbsp;treated&nbsp;with&nbsp;strict&nbsp;confidentially</span><span class="fcickm11qaod3k-3">.</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+
+          window.addEventListener("load", window.print());
+    </script>
+</BODY>
+
+</HTML>

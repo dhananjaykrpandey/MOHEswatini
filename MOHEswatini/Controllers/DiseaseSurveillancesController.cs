@@ -177,8 +177,8 @@ namespace MOHEswatini.Controllers
             //{
             //    FileName = "Disease Surveillances Form.pdf",
             //    PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
-            //    PageSize=Rotativa.AspNetCore.Options.Size.A4,
-            //    PageMargins= { Left = 10, Bottom = 10, Right = 10, Top = 10 }
+            //    PageSize = Rotativa.AspNetCore.Options.Size.A4,
+            //    PageMargins = { Left = 20, Bottom = 20, Right = 20, Top = 20 }
             //};
             //return demoViewLandscape;
         }
