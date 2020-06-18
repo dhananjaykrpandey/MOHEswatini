@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Rotativa.AspNetCore;
 
 namespace MOHEswatini.Controllers
 {
+    [Authorize]
     public class DiseaseSurveillancesController : Controller
     {
         private readonly DbMOHEswatini _context;
@@ -157,6 +159,7 @@ namespace MOHEswatini.Controllers
         }
         // POST: DiseaseSurveillances/Delete/5
         
+
         public IActionResult Print(int? id)
         {
             if (id == null)
@@ -165,19 +168,19 @@ namespace MOHEswatini.Controllers
             }
 
             var mDiseaseSurveillance =  _context.mDiseaseSurveillances.FirstOrDefault(m => m.iID == id);
-            //return View(mDiseaseSurveillance);
+            return View(mDiseaseSurveillance);
             //ViewData["Message"] = "Your contact page.";
 
             //return new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml", mDiseaseSurveillance);
 
-            var demoViewLandscape = new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml", mDiseaseSurveillance)
-            {
-                FileName = "Disease Surveillances Form.pdf",
-                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
-                PageSize=Rotativa.AspNetCore.Options.Size.A4,
-                PageMargins= { Left = 10, Bottom = 10, Right = 10, Top = 10 }
-            };
-            return demoViewLandscape;
+            //var demoViewLandscape = new ViewAsPdf("~/Views/DiseaseSurveillances/Print.cshtml", mDiseaseSurveillance)
+            //{
+            //    FileName = "Disease Surveillances Form.pdf",
+            //    PageOrientation = Rotativa.AspNetCore.Options.Orientation.Portrait,
+            //    PageSize=Rotativa.AspNetCore.Options.Size.A4,
+            //    PageMargins= { Left = 10, Bottom = 10, Right = 10, Top = 10 }
+            //};
+            //return demoViewLandscape;
         }
         public IActionResult PrintReport(int? id)
         {
